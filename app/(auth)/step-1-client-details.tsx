@@ -240,16 +240,19 @@ export default function ClientDetailsScreen() {
 
       <View style={styles.footer}>
         <TouchableOpacity
-          style={styles.button}
+          style={[
+            styles.button,
+            (!formData.retirementAge || !formData.lifeExpectancy || Object.keys(errors).length > 0) && styles.buttonDisabled
+          ]}
           onPress={handleNext}
           disabled={!formData.retirementAge || !formData.lifeExpectancy || Object.keys(errors).length > 0}
         >
-          <View style={[
-            styles.buttonContent,
-            (!formData.retirementAge || !formData.lifeExpectancy || Object.keys(errors).length > 0) && styles.buttonDisabled
+          <Text style={[
+            styles.buttonText,
+            (!formData.retirementAge || !formData.lifeExpectancy || Object.keys(errors).length > 0) && styles.buttonTextDisabled
           ]}>
-            <Text style={styles.buttonText}>Continue</Text>
-          </View>
+            Continue
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -419,7 +422,6 @@ const styles = StyleSheet.create({
     borderTopColor: '#f0f0f0',
   },
   button: {
-    backgroundColor: '#C3FF4E',
     height: 56,
     borderRadius: 28,
     alignItems: 'center',
@@ -427,18 +429,19 @@ const styles = StyleSheet.create({
     maxWidth: 800,
     width: '100%',
     alignSelf: 'center',
+    backgroundColor: '#C3FF4E',
   },
   buttonDisabled: {
-    backgroundColor: '#e1e1e1',
+    backgroundColor: '#F5F5F5',
+    borderWidth: 1,
+    borderColor: '#E1E1E1',
   },
   buttonText: {
     fontFamily: 'Poppins-SemiBold',
     fontSize: 16,
-    color: '#000',
+    color: '#000000',
   },
-  buttonContent: {
-    height: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
+  buttonTextDisabled: {
+    color: '#999999',
   },
 });

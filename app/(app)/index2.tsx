@@ -87,7 +87,7 @@ export default function HomeScreen() {
       <View style={styles.header}>
         <View>
           <Text style={styles.greeting}>Welcome back,</Text>
-          <Text style={styles.name}>Rahul Kumar</Text>
+          <Text style={styles.name}>surya sri rama murthy</Text>
         </View>
         <TouchableOpacity style={styles.notificationButton}>
           <Bell size={24} color="#000" />

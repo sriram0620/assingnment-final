@@ -10,7 +10,7 @@ const { width } = Dimensions.get('window');
 const isMobile = width < 768;
 
 const mockUserData = {
-  name: 'Rahul Kumar',
+  name: 'surya sri rama murthy',
   totalInvestment: '₹60,000',
   monthlyInvestment: '₹25,000',
   portfolioValue: '₹12,50,000',
